@@ -1,0 +1,78 @@
+{
+  "info": {
+    "name": "Weather App API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/health"
+      }
+    },
+    {
+      "name": "Get weather",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/weather?city=Amman"
+      }
+    },
+    {
+      "name": "List saved cities",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/cities"
+      }
+    },
+    {
+      "name": "Save city",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"city_name\": \"London\"\n}"
+        },
+        "url": "{{baseUrl}}/api/cities"
+      }
+    },
+    {
+      "name": "Get saved city",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/cities/1"
+      }
+    },
+    {
+      "name": "Update saved city",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"city_name\": \"Amman\"\n}"
+        },
+        "url": "{{baseUrl}}/api/cities/1"
+      }
+    },
+    {
+      "name": "Delete saved city",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/cities/1"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    }
+  ]
+}
